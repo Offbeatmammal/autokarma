@@ -37,7 +37,7 @@ Vehicle Interest
 
 (only validated users can create/edit these records)
 
-* Question: how to validate ownership of a vehicle? Do we need to (honesty system ... after all, if's called "karma"!)?
+* Question: how to validate ownership of a vehicle? Do we need to (honesty system ... after all, it's called "karma"!)?
 
 Notfications
 ====
