@@ -1,7 +1,7 @@
 AutoKarma
 ===
 
-A lightweight notification service to allow motorists to register their vehicle and receive notifications from other members in case of an issue (eg failed tail light).
+A lightweight notification service to allow motorists to register their vehicle and receive notifications from other members in case of an issue (eg failed tail light). Also supports notifications for vehicle recalls etc once sufficient number of users.
 
 * register vehicle for notifications
 * share a notification with the network
