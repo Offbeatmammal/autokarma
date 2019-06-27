@@ -6,7 +6,7 @@ A lightweight notification service to allow motorists to register their vehicle 
 * register vehicle for notifications
 * share a notification with the network
 
-All API (REST, POST) driven to allow maximum integration/adoption opportunities.
+All API (REST, POST) driven to allow maximum integration/adoption opportunities. Lightweight server implementation utilizing a cloud hosted backend database and serverless API layer to manage updates and notifications.
 
 Vehicle profile
 ===
@@ -61,6 +61,8 @@ simple API, POST supporting URLEncoded or JSON payloads
   * exhaust loose
   * smoke/oil burning
   * debris lodged under body
+  * trailer lights
+  * trailer sparks
   * others ??
 
 Responses from the service would indicate that the message has been received - an http 200 indicating success, 400 if the payload is malformed, 404 if the vehicle is not found/registered.
