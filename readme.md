@@ -6,7 +6,7 @@ A lightweight notification service to allow motorists to register their vehicle 
 * register vehicle for notifications
 * share a notification with the network
 
-All API (REST, POST) driven to allow maximum integration/adoption opportunities. Lightweight server implementation utilizing a cloud hosted backend database and serverless API layer to manage updates and notifications.
+All API (REST, POST) driven to allow maximum integration/adoption opportunities. Lightweight server implementation utilizing a cloud hosted backend database and serverless API layer to manage updates and notifications. Individual interfaces - native mobile apps, SMS integration, Voice Assistant 'skills' etc - would operate against these common APIs.
 
 Vehicle profile
 ===
