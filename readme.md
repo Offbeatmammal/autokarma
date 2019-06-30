@@ -57,13 +57,15 @@ simple API, POST supporting URLEncoded or JSON payloads
   * brake light not working [L/R/center]
   * rear indicator not working [L/R]
   * headlight not working [L/R]
-  * lights not on
+  * lights not on (short term)
   * exhaust loose
   * smoke/oil burning
   * debris lodged under body
   * trailer lights
   * trailer sparks
+  * item dropped (unsecured load)
   * others ??
+* location (from geoid/ip2geo etc), especially useful for item dropped
 
 Responses from the service would indicate that the message has been received - an http 200 indicating success, 400 if the payload is malformed, 404 if the vehicle is not found/registered.
 
