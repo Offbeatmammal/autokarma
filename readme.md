@@ -1,22 +1,23 @@
 AutoKarma
 ===
 
-A lightweight notification service to allow motorists to register their vehicle and receive notifications from other members in case of an issue (eg failed tail light). Also supports notifications for vehicle recalls etc once sufficient number of users.
+A lightweight notification service to allow motorists to register their vehicle and receive targeted notifications in case of an issue (eg failed tail light). 1 to many notifications can also be sent for vehicle recalls etc.
 
 * register vehicle for notifications
 * share a notification with the network
 
-All API (REST, POST) driven to allow maximum integration/adoption opportunities. Lightweight server implementation utilizing a cloud hosted backend database and serverless API layer to manage updates and notifications. Individual interfaces - native mobile apps, SMS integration, Voice Assistant 'skills' etc - would operate against these common APIs.
+All API (REST, POST) driven to allow maximum integration/adoption opportunities. Lightweight server implementation utilizing a cloud hosted backend database and serverless API layer to manage updates and notifications. Individual interfaces - native mobile apps, SMS integration, Voice Assistant 'skills' etc - operate against these common APIs.
 
 Vehicle profile
 ===
 * Vehicle ID (longint sequential or a GUID. Not user visible)
-* [M] Country [, State], Rego
+* [M] Country [, State], Rego/Plate
 * [O] Make, Model [, sub-model/trim], Year, Colour
+* [O] VIN (used for bulk notifications)
 
 ([M]: Mandatory, [O] optional)
 
-* Question: how to validate a vehicle? Do we need to? Places like VIC can do a [lookup](https://www.vicroads.vic.gov.au/registration/buy-sell-or-transfer-a-vehicle/buy-a-vehicle/check-vehicle-registration/vehicle-registration-enquiry) for VIN given rego but complex to automate
+* Question: how to validate a vehicle? Do we need to? Places like VIC can do a [lookup](https://www.vicroads.vic.gov.au/registration/buy-sell-or-transfer-a-vehicle/buy-a-vehicle/check-vehicle-registration/vehicle-registration-enquiry) for VIN given rego, but complex to automate
 
 User profile
 ===
@@ -42,16 +43,16 @@ Vehicle Interest
 Notfications
 ====
 * The system runs as an exposed API that allows messages to be sent from multiple sources (website, Voice Assistant, sms, twitter etc)
-* Login/validation not required to send notifications (to encourage easy initial engagement), but more capabilities exposed if user is registered/logged in
+* Login/validation not required to send notifications (to encourage easy initial engagement), but more capabilities exposed if user is registered/logged in. Spam will hopefully be reduced as the messages are spcific codes rather than freeform text (eg a URL can't be sent)
 * Messages are received, optionally aknowledged, tracked, and sent to the relevant vehicle 'listeners'.
 * Logged in, registered senders can track/review their sent messages.
 * Vehicle notifications can be viewed historically
 
 simple API, POST supporting URLEncoded or JSON payloads
-* country (optional, geoid to default if not supplied)
-* state (optional, geoid to default if not supplied)
-* rego (required, used with country/state to identify vehicle)
-* sender (optional, userid. if not supplied but sender can be determined by phone number, twitter handle etc then automatically assign)
+* country (optional, use geoid to default if not supplied)
+* state (optional, use geoid to default if not supplied)
+* rego/plate (required, used with country/state to identify vehicle)
+* sender (optional, userid. if not supplied but if sender can be determined by phone number, twitter handle etc then automatically assign)
 * notification:
   * tail light not working [L/R]
   * brake light not working [L/R/center]
