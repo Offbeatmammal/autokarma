@@ -43,7 +43,7 @@ Vehicle Interest
 Notfications
 ====
 * The system runs as an exposed API that allows messages to be sent from multiple sources (website, Voice Assistant, sms, twitter etc)
-* Login/validation not required to send notifications (to encourage easy initial engagement), but more capabilities exposed if user is registered/logged in. Spam will hopefully be reduced as the messages are spcific codes rather than freeform text (eg a URL can't be sent)
+* Login/validation not required to send notifications (to encourage easy initial engagement), but more capabilities exposed if user is registered/logged in. Spam will hopefully be reduced as the messages are specific codes rather than freeform text (eg a URL can't be sent)
 * Messages are received, optionally aknowledged, tracked, and sent to the relevant vehicle 'listeners'.
 * Logged in, registered senders can track/review their sent messages.
 * Vehicle notifications can be viewed historically
@@ -52,21 +52,21 @@ simple API, POST supporting URLEncoded or JSON payloads
 * country (optional, use geoid to default if not supplied)
 * state (optional, use geoid to default if not supplied)
 * rego/plate (required, used with country/state to identify vehicle)
-* sender (optional, userid. if not supplied but if sender can be determined by phone number, twitter handle etc then automatically assign)
+* sender (optional, userid. if not supplied but sender can be determined by phone number, twitter handle etc then automatically assign)
 * notification:
   * tail light not working [L/R]
   * brake light not working [L/R/center]
-  * rear indicator not working [L/R]
+  * indicator not working [L/R, F/R]
   * headlight not working [L/R]
   * lights not on (short term)
   * exhaust loose
   * smoke/oil burning
   * debris lodged under body
-  * trailer lights
+  * trailer lights not working
   * trailer sparks
   * item dropped (unsecured load)
   * others ??
-* location (from geoid/ip2geo etc), especially useful for item dropped
+* location (from gps/geoid/ip2geo etc), especially useful for item dropped
 
 Responses from the service would indicate that the message has been received - an http 200 indicating success, 400 if the payload is malformed, 404 if the vehicle is not found/registered.
 
@@ -76,7 +76,7 @@ Upon receipt of a notification a user can acknowledge receipt, and later aknowle
 
 Funding
 ---
-Would be great to get users to subscribe, but can't see that happening
+Would be great to get users to subscribe, but can't see that happening. Corporate sponsorship is more viable.
 
 Donations would be great ;)
 
